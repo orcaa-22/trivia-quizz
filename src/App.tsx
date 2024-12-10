@@ -28,8 +28,7 @@ function App() {
         setIsOpen(true);
         return;
       }
-
-      switchToAnswers();
+      
       return;
     }
 
