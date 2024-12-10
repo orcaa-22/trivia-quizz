@@ -1,6 +1,7 @@
 # React + TypeScript + Tailwind + Vite
-# There se in backend and u need to manually edit data.ts file to add questions!
-# U can make basic list with Q&A and give to chatGPT to rewrite data for you.
+ - There is no backend, you need to manually edit the data.ts file to add questions.
+ - You can create a basic list of Q&A and provide it to ChatGPT for rewriting the data for you.
+ - To set the proper background, add the images to the public folder and rename them. The image name should match the category index.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
