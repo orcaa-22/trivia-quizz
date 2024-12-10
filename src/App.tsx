@@ -98,10 +98,10 @@ function App() {
       </div>
 
       <div className="flex justify-center gap-5 items-end m-10 z-10">
-        <button onClick={lastCategory}><img src="lastCat.svg" alt="last-category"></img></button>
-        <button onClick={goBack}><img src="back.svg" alt="last-question"></img></button>
-        <button onClick={nextQuestion}><img src="next.svg" alt="next-question"></img></button>
-        <button onClick={nextCategory}><img src="nextCat.svg" alt="next-category"></img></button>
+        <button className="btn" onClick={lastCategory}><img src="lastCat.svg" alt="last-category"></img></button>
+        <button className="btn" onClick={goBack}><img src="back.svg" alt="last-question"></img></button>
+        <button className="btn" onClick={nextQuestion}><img src="next.svg" alt="next-question"></img></button>
+        <button className="btn" onClick={nextCategory}><img src="nextCat.svg" alt="next-category"></img></button>
       </div>
 
       {isOpen && <Modal onNo={() => { setIsOpen(false) }} onYes={switchToAnswers} />}
