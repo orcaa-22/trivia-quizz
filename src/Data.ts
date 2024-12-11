@@ -2,7 +2,9 @@ export interface QANDA {
     Question: string,
     Answer: string,
     Category: Category,
-    NumberOfQuestionInCategory: number
+    NumberOfQuestionInCategory: number,
+    YTVideoLink?: string,
+    PlayOnlyAudio?: boolean
 };
 
 export enum Category {
@@ -18,7 +20,9 @@ export const Data: QANDA[] = [
         Question: "Who directed the movie 'Inception'?",
         Answer: "Christopher Nolan",
         Category: Category.MOVIES,
-        NumberOfQuestionInCategory: 1
+        NumberOfQuestionInCategory: 1,
+        YTVideoLink: "https://www.youtube.com/watch?v=q7DfQMPmJRI",
+        PlayOnlyAudio: true,
     },
     {
         Question: "What is the highest-selling video game of all time?",
@@ -48,7 +52,9 @@ export const Data: QANDA[] = [
         Question: "Which actor played the Joker in 'The Dark Knight'?",
         Answer: "Heath Ledger",
         Category: Category.MOVIES,
-        NumberOfQuestionInCategory: 2
+        NumberOfQuestionInCategory: 2,
+        YTVideoLink: "https://www.youtube.com/watch?v=FssULNGSZIA",
+        PlayOnlyAudio: false,
     },
     {
         Question: "What is the name of the protagonist in 'The Legend of Zelda' series?",

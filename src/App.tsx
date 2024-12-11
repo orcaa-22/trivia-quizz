@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Data, QANDA } from "./Data";
 import Modal from "./Modal";
+import YouTubePlayer from "./YouTubePlayer";
 
 function App() {
   let numOfCategorys = 0;
@@ -28,7 +29,7 @@ function App() {
         setIsOpen(true);
         return;
       }
-      
+
       return;
     }
 
@@ -84,13 +85,18 @@ function App() {
   }
 
   return (
-
     <div className={`flex flex-col h-screen w-screen bg-[url('/${category}.jpg')]`}
-         style={{ backgroundImage: `url('${category}.jpg')` }}
-         onKeyDown={handleKeyDown} tabIndex={0}>
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+      style={{ backgroundImage: `url('${category}.jpg')` }}
+      onKeyDown={handleKeyDown} tabIndex={0}>
 
-      <div className="relative flex items-center justify-center w-full h-full z-10">
+      {(question.PlayOnlyAudio !== undefined && question.YTVideoLink !== undefined)
+        && <YouTubePlayer videoLink={question.YTVideoLink} onlyAudio={question.PlayOnlyAudio} />}
+
+      {(question.PlayOnlyAudio || question.PlayOnlyAudio === undefined)
+        && <div className="absolute inset-0 bg-black opacity-50 z-0 w-screen h-screen" />}
+
+      <div className={`relative flex ${(question.PlayOnlyAudio || question.PlayOnlyAudio === undefined)
+                                        ? "items-center" : "items-end"} justify-center w-full h-full z-10`}>
         <h1 className="text-[40px] leading-[1.4] px-9 text-white text-center">
           {question.NumberOfQuestionInCategory}. {qora ? question.Answer : question.Question}
         </h1>
